@@ -1,0 +1,6 @@
+name: DeathChest
+main: Phoenix4041\DeathChest\Loader
+version: 1.0.0
+api: 5.0.0
+author: Phoenix4041
+description: A professional death chest plugin with TNT explosion effects and floating text

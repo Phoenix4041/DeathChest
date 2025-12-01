@@ -1,0 +1,16 @@
+# DeathChest Messages Configuration
+# Available placeholders: {player}, {killer}
+
+toast:
+  title: "§6§lDeath Chest Opened!"
+  message: "§eYou opened §c{player}§e's death chest!"
+
+# Floating text format
+floating_text:
+  player_line: "§ePlayer§f: §c{player}"
+  killer_line: "§eKiller§f: §c{killer}"
+
+# Console messages
+console:
+  chest_created: "Death chest created for player {player} at {x}, {y}, {z}"
+  chest_removed: "Death chest removed for player {player}"
