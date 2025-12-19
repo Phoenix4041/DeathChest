@@ -1,159 +1,149 @@
-# PoorPickaxe
+# DeathChest
 
-### Advanced multi-block mining pickaxe plugin for PocketMine-MP 5.x that allows players to break multiple blocks simultaneously, featuring: Configurable mining patterns, Vein mining, Custom resource packs, and Optimized performance.
+### Advanced death chest system plugin for PocketMine-MP that creates protected chests when players die, featuring: Floating text displays, Explosion effects, Toast notifications, and Automatic expiration.
 
 ## Features
 
-* **Multiple Mining Modes**: Various pre-configured patterns like cubes, tunnels, and strips
-* **Vein Mining**: Automatically detects and mines connected ore veins of the same type
-* **Highly Configurable**: Full control over patterns, durability, efficiency, and behavior
-* **Optimized Performance**: Efficient algorithms with optional delays to prevent server lag
-* **Custom Textures**: Built-in support for custom models via a resource pack
-* **Modern Architecture**: Clean, maintainable code following PSR standards and PHP 8.1+
+* **Death Chests**: Automatic chest creation on player death with inventory items
+* **Floating Text**: Custom floating text entity showing player and killer names
+* **Explosion Effects**: Configurable explosion sounds, particles, and fuse effects
+* **Toast Notifications**: In-game toast notifications when opening death chests
+* **Auto-Expiration**: Configurable chest expiration with automatic cleanup
+* **Persistent Storage**: Tracks all active death chests across server restarts
 
 ## Requirements
 
 * PocketMine-MP 5.0.0+
-* PHP 8.1+
-* **Customies** (Latest version)
+* PHP 8.0+
 
 ## Installation
 
-1. Download the plugin (`PoorPickaxe.phar`)
+1. Download the plugin
 2. Place in your server's `plugins/` folder
-3. Ensure **Customies** is installed in the same folder
-4. Restart the server
-5. Plugin will generate `config.yml` automatically
+3. Restart the server
+4. Plugin will generate `config.yml` and `messages.yml` automatically
 
 ## Configuration
 
-The plugin creates a `config.yml` upon first run. Edit to customize mining patterns and behavior:
-
+The plugin creates a `config.yml` upon first run. Edit to customize plugin behavior:
 ```yaml
-mining-patterns:
-  my_custom_pattern:
-    display-name: "My Custom Pattern"
-    width: 2      # 5 blocks wide (2 on each side + center)
-    height: 1     # 3 blocks tall
-    depth: 3      # 7 blocks deep
-    description: "A custom mining pattern"
-break-delay-ticks: 1
-max-blocks-per-break: 128
-vein-miner: true
-
+enable_floating_text: true
+floating_text_height: 1.2
+chest_expire_time: 300  # seconds
+enable_toast_notifications: true
+explosion:
+  enable_fuse_sound: true
+  enable_sound: true
+  enable_particles: true
+  fuse_delay: 20  # ticks
 ```
 
-The plugin also supports language customization through its internal system.
+Edit `messages.yml` to customize all plugin messages in any language.
 
 ## Usage
 
 ### How It Works
 
-**Multi-Block Mining**:
+**Death Chest Creation**:
 
-1. Player equips a PoorPickaxe with a specific mode
-2. Player breaks a block within the world
-3. The plugin calculates the pattern relative to the player's direction
-4. Surrounding blocks are broken automatically based on the selected mode
+1. Player dies naturally or is killed
+2. Death chest automatically spawns at death location
+3. All inventory items are stored in the chest
+4. Floating text displays player and killer information
 
-**Mining Modes Management**:
+**Chest Interaction**:
 
-1. Use commands to switch between available modes
-2. Each mode has its own dimensions (Width x Height x Depth)
-3. Vein mining mode ignores dimensions to follow ore veins
-4. Durability and hunger are consumed based on blocks broken
+1. Right-click or break the death chest
+2. Explosion effect triggers after fuse delay
+3. All items drop for collection
+4. Toast notification appears
+5. Chest and floating text are removed
 
-**Command Display**:
-
+**Floating Text Display**:
 ```
-§eCurrent Mode§f: §c{ModeName}
-§eBlocks Broken§f: §c{Count}
-
+§ePlayer§f: §c{PlayerName}
+§eKiller§f: §c{KillerName}
 ```
 
 ### Technical Details
 
-The plugin uses custom item registration and managers:
+The plugin uses custom entities and managers:
 
 ### Details
 
-* **Item System**: Custom items registered via Customies for high-fidelity models
-* **Mining Logic**: Direction-aware coordinate calculations for precise patterns
-* **Performance**: Task-based delayed breaking to spread load across ticks
-* **Storage**: Player-specific mining mode preferences persistence
-* **Optimization**: Configurable limits to prevent massive world edits
+* **Entity System**: Custom FloatingTextEntity using Human base class
+* **Persistence**: Active chest tracking with world reference
+* **Explosion**: Configurable fuse delay with sounds and particles
+* **Storage**: In-memory storage with automatic cleanup
+* **Notifications**: Native Minecraft toast notifications
 
 ### Known Limitations
 
-* Requires Customies for custom item rendering
-* Performance may vary if `max-blocks-per-break` is set too high
-* Some custom blocks from other plugins might not be detected
-* Vein mining is limited by the `max-blocks` configuration
+* Floating text despawns if chunk unloads
+* Explosion effects require chunk to be loaded
+* Maximum one death chest per death event
+* Items drop if chest cannot be placed
 
 ## Architecture
 
 This plugin is designed with modular components:
-
 ```
-PoorPickaxe/
+DeathChest/
 ├── plugin.yml
 ├── resources/
-│   └── config.yml
+│   ├── config.yml
+│   └── messages.yml
 └── src/
-    └── PoorPickaxe/
-        ├── Loader.php
-        ├── item/
-        │   └── PoorPickaxeItem.php
-        ├── manager/
-        │   ├── ConfigManager.php
-        │   └── MiningManager.php
-        ├── listener/
-        │   └── BlockBreakListener.php
-        └── task/
-            └── DelayedBreakTask.php
-
+    └── Phoenix4041/
+        └── DeathChest/
+            ├── Loader.php
+            ├── entity/
+            │   └── FloatingTextEntity.php
+            ├── manager/
+            │   └── DeathChestManager.php
+            └── listener/
+                ├── PlayerDeathListener.php
+                └── ChestInteractionListener.php
 ```
 
 ## Contributing
 
-This plugin was created for educational purposes and advanced server utility.
+This plugin was created for educational purposes.
 
 ## License
 
-This project is released under the MIT License.
+This project was created for educational purposes.
 
 ## Support
 
-For issues or suggestions, contact Phoenix4041 or visit the GitHub repository.
+For issues or suggestions, contact Phoenix4041.
 
 ## Updates & Improvements
 
-### v2.0.0 - Major Refactor
+### v1.0.0 - Initial Release
 
 **Features:**
 
-* Complete refactor with modern PHP 8+ features
-* Added multiple configurable mining patterns
-* Implemented vein mining system
-* Added player-specific mining mode preferences
-* Improved performance with optimized algorithms
-* Added comprehensive configuration options
-* Implemented proper permission system
-* Added delayed block breaking option
+* Death chest automatic creation on player death
+* Custom floating text entity with player/killer info
+* Explosion effects with configurable fuse delay
+* Toast notifications for chest interactions
+* Configurable chest expiration timer
+* Full inventory transfer to death chest
+* Automatic cleanup on chest removal
 
 **Technical Implementation:**
 
-* Singleton-based Loader for global API access
-* Customies integration for native-feeling custom items
-* Coordinate offset mapping for 3D pattern generation
-* Efficient event-driven block breaking system
-* PSR-compliant naming conventions and structure
+* FloatingTextEntity using Human base class for reliable rendering
+* Transparent skin with invisible body, visible nametag
+* Entity registration with proper NBT and Skin initialization
+* Task-based chest expiration system
+* Event-driven architecture for death and interaction handling
 
 ## Version Support
 
 | Version | Release Date | Status | Support |
-| --- | --- | --- | --- |
-| 2.0.0 | December 2025 | 🟢 Active | Full support |
-| 1.1.0 | October 2025 | 🔴 Legacy | No support |
+|---------|-------------|--------|---------|
+| 1.0.0 | December 2025 | 🟢 Active | Full support |
 
 **Made with ❤️ by Phoenix4041**
